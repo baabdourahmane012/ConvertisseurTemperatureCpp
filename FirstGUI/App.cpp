@@ -18,28 +18,13 @@ public:
 		: wxFrame(nullptr, wxID_ANY, titre) {
 		SetSize(400, 550);
 		// Layout vertical
-		wxBoxSizer* sizer = new wxBoxSizer(
-			wxVERTICAL
-		);
+		wxBoxSizer* sizer = new wxBoxSizer(wxVERTICAL);
 		SetSizer(sizer);
 		// Police d'ecriture
-		wxFont fontLab(
-			20,
-			wxFONTFAMILY_DEFAULT,
-			wxFONTSTYLE_NORMAL,
-			wxFONTWEIGHT_NORMAL
-		);
+		wxFont fontLab(20, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL);
 		// Ajouter les labels
-		labelDe = new wxStaticText(
-			this, wxID_ANY, "0",
-			wxPoint(100, 50),
-			wxSize(200, 30)
-		);
-		labelA = new wxStaticText(
-			this, wxID_ANY, "0",
-			wxPoint(100, 150),
-			wxSize(200, 30)
-		);
+		labelDe = new wxStaticText(this, wxID_ANY, "0", wxPoint(100, 50), wxSize(200, 30));
+		labelA = new wxStaticText(this, wxID_ANY, "0", wxPoint(100, 150), wxSize(200, 30));
 		// Ajouter la Police aux labels
 		labelDe->SetFont(fontLab);
 		labelA->SetFont(fontLab);
@@ -54,22 +39,11 @@ public:
 		optionsA.Add("Celcuis");
 		optionsA.Add("Fahrenheit");
 		// Ajouter les choix au checklist
-		choixDe = new wxChoice(
-			this, wxID_ANY,
-			wxPoint(100, 90),
-			wxSize(200, 30),
-			optionsDe
-		);
+		choixDe = new wxChoice(this, wxID_ANY, wxPoint(100, 90), wxSize(200, 30), optionsDe);
 		// Option par defaut
 		choixDe->SetSelection(0);
 
-		choixA = new wxChoice(
-			this, wxID_ANY,
-			wxPoint(100, 190),
-			wxSize(200, 30),
-			optionsA
-
-		);
+		choixA = new wxChoice(this, wxID_ANY, wxPoint(100, 190), wxSize(200, 30), optionsA);
 		// Option par defaut
 		choixA->SetSelection(0);
 
@@ -85,7 +59,7 @@ public:
 			wxSize(65, 50)
 		);
 		wxButton* bouton_ce = new wxButton(
-			this, 1011, "CE", wxPoint(167, 229), 
+			this, 1011, "CE", wxPoint(167, 229),
 			wxSize(65, 50));
 		wxButton* bouton_0 = new wxButton(
 			this, 1000, "0", wxPoint(233, 229),
@@ -96,10 +70,10 @@ public:
 		bouton_ce->SetFont(fontBouton);
 
 		wxButton* bouton_9 = new wxButton(
-			this, 1009, "9", wxPoint(101, 280), 
+			this, 1009, "9", wxPoint(101, 280),
 			wxSize(65, 50));
 		wxButton* bouton_8 = new wxButton(
-			this, 1008, "8", wxPoint(167, 280), 
+			this, 1008, "8", wxPoint(167, 280),
 			wxSize(65, 50));
 		wxButton* bouton_7 = new wxButton(
 			this, 1007, "7", wxPoint(233, 280),
@@ -109,26 +83,26 @@ public:
 		bouton_7->SetFont(fontBouton);
 
 		wxButton* bouton_6 = new wxButton(
-			this, 1006, "6", wxPoint(101, 331), 
+			this, 1006, "6", wxPoint(101, 331),
 			wxSize(65, 50));
 		wxButton* bouton_5 = new wxButton(
-			this, 1005, "5", wxPoint(167, 331), 
+			this, 1005, "5", wxPoint(167, 331),
 			wxSize(65, 50));
 		wxButton* bouton_4 = new wxButton(
-			this, 1004, "4", wxPoint(233, 331), 
+			this, 1004, "4", wxPoint(233, 331),
 			wxSize(65, 50));
 		bouton_6->SetFont(fontBouton);
 		bouton_5->SetFont(fontBouton);
 		bouton_4->SetFont(fontBouton);
 
 		wxButton* bouton_3 = new wxButton(
-			this, 1003, "3", wxPoint(101, 382), 
+			this, 1003, "3", wxPoint(101, 382),
 			wxSize(65, 50));
 		wxButton* bouton_2 = new wxButton(
-			this, 1002, "2", wxPoint(167, 382), 
+			this, 1002, "2", wxPoint(167, 382),
 			wxSize(65, 50));
 		wxButton* bouton_1 = new wxButton(
-			this, 1001, "1", wxPoint(233, 382), 
+			this, 1001, "1", wxPoint(233, 382),
 			wxSize(65, 50));
 		bouton_3->SetFont(fontBouton);
 		bouton_2->SetFont(fontBouton);
@@ -201,7 +175,7 @@ public:
 		(wxCommandEvent& event) {
 				checker(event);
 			}, choixDe->GetId()
-		);
+				);
 		choixA->Bind(wxEVT_CHOICE, [this]
 		(wxCommandEvent& event) {
 				checker(event);
